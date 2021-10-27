@@ -1,0 +1,15 @@
+export enum Constants {
+    EAST = 'EAST',
+    WEST = 'WEST',
+    SOUTH = 'SOUTH',
+    NORTH = 'NORTH',
+    LEFT = 'LEFT',
+    RIGHT = 'RIGHT',
+    MOVE = 'MOVE',
+    PLACE = 'PLACE',
+    COORDINATE_X = 'positionX',
+    COORDINATE_Y = 'positionY',
+    MISSING_COORDINATES_ERROR = 'Please input coordinates and choose a facing direction!',
+    INVALID_COORDINATES_ERROR = 'Please choose valid coordinates with facing direction!',
+    ROBOT_FALL_OFF_ERROR = 'This move will make your robot fall off, please change direction or key in another coordinate!',
+}

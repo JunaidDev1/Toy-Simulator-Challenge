@@ -1,0 +1,39 @@
+<div class="row justify-content-center m-5">
+  <div class="col-md-6 row">
+    <div class="col-md-4">
+      <label>Position X</label>
+      <input [(ngModel)]="coordinates.positionX" type="number" class="form-control" placeholder="X">
+    </div>
+    <div class="col-md-4">
+      <label>Position Y</label>
+      <input [(ngModel)]="coordinates.positionY" type="number" class="form-control" placeholder="Y">
+    </div>
+    <div class="col-md-4">
+      <label>Facing</label>
+      <select [(ngModel)]="currentDirection" class="form-control">
+        <option *ngFor="let direction of allDirections" [value]="direction">{{direction}}</option>
+      </select>
+    </div>
+
+    <div class="col-md-12 my-3 text-center">
+      <button (click)="placeAtOrigin()" class="btn btn-primary me-2">PLACE</button>
+      <button (click)="moveTowardsFacing()" class="btn btn-primary me-2">MOVE</button>
+      <button (click)="changeDirection('LEFT')" class="btn btn-primary me-2">LEFT</button>
+      <button (click)="changeDirection('RIGHT')" class="btn btn-primary me-2">RIGHT</button>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-control mt-2">
+        <label class="w-100">Inputs:</label>
+        <label *ngFor="let input of inputCommands" class="w-100">{{input}}</label>
+      </div>
+      <div class="d-flex">
+        <button (click)="outputReport()" class="btn btn-success w-100 my-3">REPORT</button>
+        <button (click)="clearData()" class="btn btn-light w-25 ms-2 my-3">CLEAR</button>
+      </div>
+      <div *ngIf="outputResult" class="form-control">
+        <label>{{outputResult}}</label>
+      </div>
+    </div>
+  </div>
+</div>
